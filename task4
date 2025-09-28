@@ -1,0 +1,44 @@
+
+
+# Firewall Configuration and Testing Report
+
+## 1. Introduction
+
+This report documents the process of configuring and testing basic firewall rules on a Windows system using Windows Defender Firewall. The objective was to demonstrate fundamental firewall management skills such as viewing current rules, adding a blocking rule for a specific port, testing connectivity, and restoring the firewall to its original state.
+
+## 2. Tools and Environment
+
+- Operating System: Windows 10/11 (or your version)
+- Firewall Tool: Windows Defender Firewall with Advanced Security
+
+## 3. Procedure
+
+### Step 1: Open Firewall Configuration Tool  
+Navigated to Windows Defender Firewall via the Control Panel and accessed the Advanced Settings interface for detailed rule management.
+
+### Step 2: List Existing Firewall Rules  
+Reviewed existing inbound and outbound rules to understand current network traffic policies.
+
+### Step 3: Add Firewall Rule to Block Port 23  
+Created a new inbound rule to block TCP traffic on port 23 (Telnet) to prevent unauthorized remote access attempts through this port.
+
+### Step 4: Test the Blocking Rule  
+Used PowerShell command `Test-NetConnection -ComputerName localhost -Port 23` to verify that connections to port 23 were successfully blocked by the firewall.
+
+### Step 5: Remove / Disable Blocking Rule  
+Disabled the port 23 blocking rule to restore the firewall to its initial configuration, ensuring no disruption to normal network services.
+
+## 4. Results
+
+- Successfully created and enabled a firewall rule blocking inbound traffic to port 23.
+- Connectivity tests confirmed the firewall effectively blocked access to the specified port.
+- Firewall rule was subsequently disabled, returning the system to initial network policy settings.
+
+## 5. Conclusion
+
+This exercise demonstrated the capability to manage Windows Firewall rules effectively, including adding, testing, and removing rules. Understanding and controlling firewall rules is essential for securing systems against unauthorized network access and potential exploits.
+
+## 6. References
+
+- Windows Defender Firewall User Guide  
+- PowerShell Documentation  
